@@ -1,0 +1,128 @@
+% ============================================================
+%  Template CV — KAKESA MUDIMBA Emmanuel-Dieudonné
+%  Reproduit fidèlement les sections I -> VIII du CV source.
+%  Compiler avec : pdflatex CV_KAKESA_MUDIMBA.tex
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{xcolor}
+\usepackage{tikz}  % cadre autour de la photo
+
+\geometry{margin=2cm, top=2.5cm, bottom=1.6cm}
+
+\definecolor{navy}{RGB}{31,51,100}
+
+\newcommand{\sectioncv}[1]{%
+  \vspace{6pt}%
+  \noindent\textcolor{navy}{\textbf{\large #1}}%
+  \par\noindent\textcolor{navy}{\rule{\linewidth}{0.6pt}}%
+  \vspace{2pt}%
+}
+
+\newcommand{\puce}[1]{%
+  \noindent\textcolor{navy}{\textbf{\Large\ensuremath{\Rightarrow}}}~#1\par%
+}
+
+\newcommand{\ligne}[2]{%
+  \noindent\textcolor{navy}{\textbf{\Large\ensuremath{\Rightarrow}}}~%
+  \textcolor{navy}{\textbf{#1 :}}~#2\par%
+}
+
+\begin{document}
+
+% ---------------- PHOTO (haut droite, absolute, coin à 16 mm) ----------------
+\tikz[overlay,remember picture]{
+  \node[draw=navy, line width=1pt, inner sep=1pt, anchor=north east]
+    at ([xshift=-1.6cm, yshift=-1.6cm]current page.north east)
+    {\includegraphics[width=3.2cm,height=4.27cm,keepaspectratio]{photo_kakesa.jpg}};
+}
+
+\begin{center}
+  {\Large\bfseries\textcolor{navy}{CURRICULUM VITAE}}
+\end{center}
+\vspace{6pt}
+
+% ---------------- I. INFORMATIONS PERSONNELLES ----------------
+\sectioncv{I. INFORMATIONS PERSONNELLES}
+\ligne{Nom}{KAKESA}
+\ligne{Poste nom}{MUDIMBA}
+\ligne{Pr\'enom}{Emmanuel-Dieudonn\'e}
+\ligne{Sexe}{MASCULIN}
+\ligne{Lieu et date de naissance}{ITURI (BUNIA), le 12/08/1998}
+\ligne{Etat civil}{CELIBATAIRE}
+\ligne{Nationalit\'e}{CONGOLAISE}
+\ligne{Adresse}{N\textdegree\ 3, Avenue TUNGILA, Q/ BIANDA, C/ MONT NGAFULA}
+\ligne{T\'el\'ephone}{(+243) 818 491 601}
+\ligne{E-mail}{kakesamudimba@gmail.com}
+
+% ---------------- II. PARCOURS PROFESSIONNEL ----------------
+\sectioncv{II. PARCOURS PROFESSIONNEL}
+\puce{2024 \`a ce jours, professeur des Comptabilit\'es et cours \`a caract\`ere
+commercial et d\'el\'egu\'e des professeurs au complexe scolaire sagesse2 et
+professeur de math\'ematiques 7, 8 et premi\`ere humanit\'e au Complexe
+scolaire Minga la Paix aussi encadrant \`a domicile de comptabilit\'e 1 et 2.}
+\puce{Juillet 2025. Agent de prospection -- MARS SARL (mission de 2 semaines) :
+Collecte de donn\'ees d'entreprises, PME, \'ecoles, ONG et institutions ;
+Prospection terrain et prise de contact ; Pr\'esentation des services de
+l'entreprise ; Identification des besoins des prospects.}
+\puce{De 2019 \`a 2023, Analyse des march\'es financiers (Forex) bas\'ee sur des
+indicateurs techniques, Prise de d\'ecision en environnement incertain.}
+\puce{A novembre 2023 \`a ce jours, agent d'appui logistique au projet PUC MED
+de M\'edecins sans fronti\`eres : Suivi de stock ; S\'ecurit\'e des locaux ;
+Gestion de la cha\^ine du froid ; Reporting logistique.}
+\puce{De Ao\^ut 2022 \`a f\'evrier 2023, stage professionnel \`a la Direction
+R\`eglementation et Qualit\'e comptable (DRQC) du minist\`ere des Finances :
+Gestion et enregistrement des courriers entrants/sortants ; V\'erification des
+pi\`eces comptables et coordination interservices ; Collaboration dans
+l'archivage et la pr\'eparation de rapports financiers.}
+
+% ---------------- III. DOMAINES DE COMPETENCE ----------------
+\sectioncv{III. DOMAINES DE COMPETENCE}
+\puce{Analyse financi\`ere et prise de d\'ecision ; Audit, contr\^ole interne et
+gestion des risques ; Comptabilit\'e financi\`ere et analytique ; Fiscalit\'e et
+gestion d'entreprise ; Analyse de donn\'ees et interpr\'etation \'economique ;
+P\'edagogie et transmission structur\'ee ; Logistique et gestion op\'erationnelle.}
+
+% ---------------- IV. ETUDES FAITES ----------------
+\sectioncv{IV. ETUDES FAITES}
+\puce{De 2021-2022 : Licenci\'e en Sciences \'economiques et de gestion, Option
+Gestion Financi\`ere \`a l'Universit\'e de Kinshasa}
+\puce{De 2018-2020 : Gradu\'e en science \'economique g\'en\'erale}
+\puce{De 2012-2017 : Dipl\^ome d'\'Etat en Litt\'eraire au coll\`ege Sainte Rita}
+\puce{De 2004-2009 : Certificat d'\'etudes primaires \`a l'E.P 4 Pr\'esidence}
+
+% ---------------- V. FORMATIONS ACADÉMIQUE ----------------
+\sectioncv{V. FORMATIONS ACAD\'EMIQUE}
+\puce{Formation en comptabilit\'e OHADA R\'evis\'ee.}
+\puce{Formation en informatique logiciels Word et Excel.}
+
+% ---------------- VI. LANGUES ----------------
+\sectioncv{VI. LANGUES}
+\ligne{Fran\c{c}ais}{Courant}
+\ligne{Anglais}{Lu, \'ecrit, parl\'e moyen}
+\ligne{Lingala}{Bilingue}
+
+% ---------------- VIII. PERSONNES DE REFERENCE ----------------
+\sectioncv{VIII. PERSONNES DE REFERENCE}
+\ligne{MUTAMBWE TSHAMU Patrick}{Directeur des Ressources Humaines MSF Belgique : 0824983499}
+\ligne{TEDDY PULUMBA}{Encadrant, Chef de pool \`a la direction de Pr\'eparation de
+r\'eglementation Financi\`ere et comptable. Gmail : teddypulumba@gmail.com. +243****7917}
+\ligne{MFUNI INABANZA Ange}{Chef de bureau au Division de normalisation et
+Management comptable. +243****7052, Gmail : angemiamas@gmail.com}
+\ligne{OMARI BATUKWA}{Pharmacien et logisticien, M\'edecins sans Fronti\`eres.
+Gmail : omaribatukwa@gmail.com. +243 814 363 400}
+\ligne{DJIMY MAKENGO}{Directeur de discipline, Complexe Scolaire sagesse2. +243 821 994 204}
+\ligne{C\'ELESTIN KAPONGO}{Pr\'efet, Complexe scolaire sagesse2. +243 977 127 761}
+
+% ---------------- SIGNATURE ----------------
+\vspace{14pt}
+\hfill\textit{Fait \`a Kinshasa, le 01 Juin 2026}\par
+\hfill\textbf{KAKESA MUDIMBA Emmanuel-Dieudonn\'e}
+
+\end{document}
