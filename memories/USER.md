@@ -1,0 +1,1 @@
+User communicates in French and expects replies and generated document content in French.

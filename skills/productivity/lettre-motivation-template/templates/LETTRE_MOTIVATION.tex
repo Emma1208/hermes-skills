@@ -1,0 +1,119 @@
+% ============================================================
+%  Template LETTRE DE MOTIVATION (RDC)
+%  Structure : expéditeur (gauche) / date+destinataire (droite),
+%  Objet, corps, formule de politesse, signature.
+%  Compiler avec : pdflatex LETTRE_MOTIVATION.tex
+%  Remplir les champs \newcommand ci-dessous.
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+
+\geometry{margin=2cm, top=2cm, bottom=2cm}
+
+\definecolor{navy}{RGB}{31,51,100}
+
+% ---------------- CHAMPS A REMPLIR ----------------
+\newcommand{\NomExp}{KAKESA MUDIMBA Emmanuel-Dieudonn\'e}
+\newcommand{\NomExpDer}{Emmanuel-Dieudonn\'e}
+\newcommand{\AdrExp}{N\textdegree\ 3, AV. TUNGILA, Q/ BIANDA, C/ MONT NGAFULA}
+\newcommand{\TelExp}{Tel : +243 81 849 16 01}
+\newcommand{\MailExp}{Email : kakesamudimba@gmail.com}
+
+\newcommand{\DateLieu}{Kinshasa, 06 / 09 / 2025}
+\newcommand{\DestLigneA}{A Monsieur le Directeur des Ressources}
+\newcommand{\DestLigneB}{Humaines de DELOITTE RDC}
+\newcommand{\DestLigneC}{KINSHASA / GOMBE}
+
+\newcommand{\Salut}{Monsieur le Directeur,}
+\newcommand{\Objet}{Candidature au poste de Stagiaire ADVISORY / CONSEIL}
+
+% Corps : décommenter / ajuster les paragraphes
+\newcommand{\Corps}{%
+Par la présente, j'ai l'honneur de soumettre ma candidature au poste
+susmentionné au sein de votre honorable structure.
+
+Titulaire d'une Licence en Sciences économiques et de gestion, option
+Gestion Financière, de l'Université de Kinshasa, je nourris un vif
+intérêt pour les domaines du Conseil, de la Finance et de la Comptabilité.
+
+Mon parcours académique ainsi qu'un stage effectué à la Direction de
+l'Audit et du Contrôle de Gestion du ministère des Finances m'ont permis
+d'appréhender les notions d'Audit, de Finance et de Comptabilité. Je suis
+confiant quant à la maîtrise des compétences requises pour le poste.
+
+Travailleur acharné, déterminé et esprit d'équipe, je suis en mesure
+d'apporter une contribution significative en tant que stagiaire ADVISORY.
+L'esprit d'innovation et de dynamisme qui caractérise DELOITTE m'attire
+tout particulièrement.
+
+Je vous remercie de l'attention accordée à ma candidature et me tiens à
+votre entière disposition pour tout complément d'information. Vous trouverez
+ci-joint mon curriculum vitae.
+}
+
+\newcommand{\Formule}{Je vous prie d'agréer, Monsieur le Directeur, l'assurance de ma considération distinguée.}
+\newcommand{\NomSign}{KAKESA MUDIMBA Emmanuel-Dieudonn\'e}
+% Signature manuscrite (décommenter + image si dispo) :
+% \newcommand{\SigImg}{signature.png}
+
+% ---------------- MISE EN PAGE ----------------
+\begin{document}
+
+% --- LIGNE 1 : nom expéditeur (gauche) + date (droite) ---
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  {\color{navy}\textbf{\NomExp}}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \raggedleft
+  \DateLieu
+\end{minipage}
+
+% --- Sous le nom : coordonnées (gauche) ---
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+  \AdrExp\\
+  \TelExp\\
+  \MailExp
+\end{minipage}
+
+\vspace{0.6cm}
+
+% --- Destinataire : EN-DESSOUS de l'expéditeur, à DROITE, aligné à GAUCHE ---
+\hfill
+\begin{minipage}[t]{0.48\textwidth}
+  \DestLigneA\\
+  \DestLigneB\\
+  \DestLigneC
+\end{minipage}
+
+\vspace{1.2cm}
+
+{\color{navy}\textbf{Concerne : \Objet}}
+
+\vspace{0.4cm}
+\Salut
+
+\vspace{0.3cm}
+
+\Corps
+
+\vspace{0.6cm}
+\Formule
+
+\vspace{1.4cm}
+% \ifdefined\SigImg
+%   \includegraphics[height=1.6cm]{\SigImg}\\
+% \fi
+% Signature : tout le nom a droite
+\raggedleft
+{\color{navy}\textbf{\NomExp}}
+
+\end{document}

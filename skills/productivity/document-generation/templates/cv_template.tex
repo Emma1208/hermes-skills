@@ -1,0 +1,75 @@
+% ============================================================
+%  Template CV sectionne (style I -> VIII, regles navy)
+%  Compiler avec : pdflatex CV.tex
+%  Copier et remplir les champs. Self-contained (pas de package exotique).
+% ============================================================
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{xcolor}
+
+\geometry{margin=2cm, top=1.6cm, bottom=1.6cm}
+\definecolor{navy}{RGB}{31,51,100}
+
+\newcommand{\sectioncv}[1]{%
+  \vspace{6pt}%
+  \noindent\textcolor{navy}{\textbf{\large #1}}%
+  \par\noindent\textcolor{navy}{\rule{\linewidth}{0.6pt}}%
+  \vspace{2pt}%
+}
+% puce flèche ⮚ : si absente de la fonte, remplacer par \textcolor{navy}{\textbf{>>}}
+\newcommand{\puce}[1]{%
+  \noindent\textcolor{navy}{\textbf{\Large\ensuremath{\Rightarrow}}}~#1\par%
+}
+\newcommand{\ligne}[2]{%
+  \noindent\textcolor{navy}{\textbf{\Large\ensuremath{\Rightarrow}}}~%
+  \textcolor{navy}{\textbf{#1 :}}~#2\par%
+}
+
+\begin{document}
+\begin{center}
+  {\Large\bfseries\textcolor{navy}{CURRICULUM VITAE}}
+\end{center}
+\vspace{6pt}
+
+\sectioncv{I. INFORMATIONS PERSONNELLES}
+\ligne{Nom}{KAKESA}
+\ligne{Poste nom}{MUDIMBA}
+\ligne{Pr\'enom}{Emmanuel-Dieudonn\'e}
+\ligne{Sexe}{MASCULIN}
+\ligne{Lieu et date de naissance}{ITURI (BUNIA), le 12/08/1998}
+\ligne{Etat civil}{CELIBATAIRE}
+\ligne{Nationalit\'e}{CONGOLAISE}
+\ligne{Adresse}{N\textdegree\ 3, Avenue TUNGILA, Q/ BIANDA, C/ MONT NGAFULA}
+\ligne{T\'el\'ephone}{(+243) 818 491 601}
+\ligne{E-mail}{kakesamudimba@gmail.com}
+
+\sectioncv{II. PARCOURS PROFESSIONNEL}
+\puce{2024 \`a ce jours, professeur des Comptabilit\'es ...}
+\puce{A novembre 2023 \`a ce jours, agent d'appui logistique ...}
+
+\sectioncv{III. DOMAINES DE COMPETENCE}
+\puce{Analyse financi\`ere et prise de d\'ecision ; Audit, contr\^ole interne ...}
+
+\sectioncv{IV. ETUDES FAITES}
+\puce{De 2021-2022 : Licenci\'e en Sciences \'economiques ...}
+
+\sectioncv{V. FORMATIONS ACAD\'EMIQUE}
+\puce{Formation en comptabilit\'e OHADA R\'evis\'ee.}
+
+\sectioncv{VI. LANGUES}
+\ligne{Fran\c{c}ais}{Courant}
+\ligne{Anglais}{Lu, \'ecrit, parl\'e moyen}
+\ligne{Lingala}{Bilingue}
+
+\sectioncv{VIII. PERSONNES DE REFERENCE}
+\ligne{NOM}{D\'etail / contact}
+
+\vspace{14pt}
+\hfill\textit{Fait \`a ..., le ...}\par
+\hfill\textbf{NOM COMPLET}
+
+\end{document}

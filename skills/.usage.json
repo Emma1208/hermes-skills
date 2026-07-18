@@ -1,0 +1,67 @@
+{
+  "cv-master-template": {
+    "archived_at": null,
+    "created_at": "2026-07-18T13:22:25.535416+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-07-18T16:43:20.794101+00:00",
+    "last_used_at": "2026-07-18T17:01:33.276571+00:00",
+    "last_viewed_at": "2026-07-18T17:01:33.259381+00:00",
+    "patch_count": 6,
+    "pinned": false,
+    "state": "active",
+    "use_count": 11,
+    "view_count": 11
+  },
+  "document-generation": {
+    "archived_at": null,
+    "created_at": "2026-07-18T12:05:45.003539+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-18T13:23:13.697794+00:00",
+    "last_used_at": "2026-07-18T13:22:11.333201+00:00",
+    "last_viewed_at": "2026-07-18T13:22:11.321854+00:00",
+    "patch_count": 7,
+    "pinned": false,
+    "state": "active",
+    "use_count": 2,
+    "view_count": 2
+  },
+  "github-auth": {
+    "archived_at": null,
+    "created_at": "2026-07-18T15:45:51.596671+00:00",
+    "created_by": null,
+    "last_patched_at": null,
+    "last_used_at": "2026-07-18T15:45:51.607416+00:00",
+    "last_viewed_at": "2026-07-18T15:45:51.596752+00:00",
+    "patch_count": 0,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
+  "github-skills-backup": {
+    "archived_at": null,
+    "created_at": "2026-07-18T16:59:35.850092+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-18T17:00:50.261166+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 1,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
+  "lettre-motivation-template": {
+    "archived_at": null,
+    "created_at": "2026-07-18T14:19:22.234608+00:00",
+    "created_by": null,
+    "last_patched_at": "2026-07-18T16:42:04.094178+00:00",
+    "last_used_at": "2026-07-18T17:01:33.305915+00:00",
+    "last_viewed_at": "2026-07-18T17:01:33.295879+00:00",
+    "patch_count": 13,
+    "pinned": false,
+    "state": "active",
+    "use_count": 17,
+    "view_count": 17
+  }
+}
