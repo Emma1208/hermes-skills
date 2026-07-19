@@ -1,4 +1,17 @@
 {
+  "crypto-signal-bot": {
+    "archived_at": null,
+    "created_at": "2026-07-19T11:43:49.378762+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-19T11:46:37.723041+00:00",
+    "last_used_at": "2026-07-19T11:46:18.727541+00:00",
+    "last_viewed_at": "2026-07-19T11:46:18.717182+00:00",
+    "patch_count": 3,
+    "pinned": false,
+    "state": "active",
+    "use_count": 1,
+    "view_count": 1
+  },
   "cv-master-template": {
     "archived_at": null,
     "created_at": "2026-07-18T13:22:25.535416+00:00",
@@ -63,5 +76,31 @@
     "state": "active",
     "use_count": 17,
     "view_count": 17
+  },
+  "termux-proot-distro": {
+    "archived_at": null,
+    "created_at": "2026-07-18T18:41:26.221761+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-18T18:42:10.285927+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 2,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
+  },
+  "trading-signal-bot": {
+    "archived_at": null,
+    "created_at": "2026-07-19T10:29:19.598259+00:00",
+    "created_by": "agent",
+    "last_patched_at": "2026-07-19T10:29:59.417743+00:00",
+    "last_used_at": null,
+    "last_viewed_at": null,
+    "patch_count": 3,
+    "pinned": false,
+    "state": "active",
+    "use_count": 0,
+    "view_count": 0
   }
 }
