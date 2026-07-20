@@ -4,8 +4,8 @@ Templates CV + lettre versionnés GitHub (compte Emma1208, dépôt public Emma12
 §
 CONVENTION: message 'S' (majuscule seule) = sauvegarde auto GitHub skills+mémoire via /root/.hermes/scripts/backup_skills_memory.py (dépôt Emma1208/hermes-skills, branche main). Exécuter sans redemander. Token via env GITHUB_TOKEN (jamais en clair).
 §
-Termux PRoot Py3.14 ARM musl: Pillow broken -> reportlab/docx/lxml unusable. PDF via fpdf2+DejaVu TTF; DOCX hand-written OOXML zip. ⮚->► en PDF seulement.
-§
 User demands one-command-at-a-time on Termux: send a single command, wait for their output, then next. No batched sequential commands to await.
 §
-Termux: proot-distro 5.4.1 EST l'officiel (réécrit Python, tire images Docker/OCI, plus le script shell 4.x). 'install void' échoue (Unauthorized) car il faut le nom d'image Docker complet. Void OK via: proot-distro install ghcr.io/void-linux/void-glibc-full:latest --name void. Si 'Layer integrity check failed' -> proot-distro clear-cache puis relancer. Void=gestionnaire xbps.
+Projet Crypto Signal Bot EMK (/root/crypto-bot/): bot Python Binance (urllib) + Telegram @Cryptobotemkbot (groupe -1004400606802). RSI14(30/60)+EMA20/100, SL2%, RR3:1, paires SOL/DOGE/LTC (WR 83/63/48%). M-Pesa +243818491601, 24000 FC/mois. Depot GitHub Emma1208/crypto-signal-bot-emk (PUBLIC, sans secrets). Tel=serveur via Termux (watchdog.sh + termux-wake-lock). LEÇON: jamais 'git add -A' depuis /root.
+§
+CORRECTION (user): si je donne un secret/token, le donner COMPLET et exact (jamais tronque avec '...') -> sinon l'user le retape et ca cree des heures d'erreurs. User veut que JE corrige MES erreurs, pas lui reprocher ses fautes de frappe. Token Telegram du bot deja copie-colle en clair dans l'historique -> a revoquer.
