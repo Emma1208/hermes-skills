@@ -1,7 +1,7 @@
 ---
 name: web-app-github-pwa
 description: "Déployer une application web statique (HTML/JS) sur GitHub avec une base de données JSON (bdd.json) synchronisée par PAT, GitHub Pages et installation PWA sur mobile."
-version: 1.0.0
+version: 1.1.0
 author: Hermes Agent (pour Emmanuel)
 license: MIT
 platforms: [linux, android, termux]
@@ -62,6 +62,15 @@ Toujours passer par un **script fichier** (`write_file` puis `bash`) pour ne jam
 ### 6. Vérification finale
 - Tester réellement GET/PUT `bdd.json` avec le PAT, avec le `sha`, puis restaurer le fichier à son état initial.
 - Confirmer : CORS `*`, titre distant correct, tous les fichiers PWA en HTTP 200 avec le bon MIME.
+
+## Fichiers de support (linked_files)
+
+- `scripts/validate_html.sh <fichier.html>` — vérifie `</html>`, valide chaque bloc JS avec `node --check`, contrôle les références.
+- `scripts/make_icons.py [dossier]` — génère les 3 icônes PNG sans dépendance (zlib + struct).
+- `scripts/deploy_files.sh <owner> <repo> <local:remote> ...` — upload via API avec `GITHUB_TOKEN` en variable d'environnement (jamais en argument), gère le SHA des mises à jour.
+- `scripts/setup_pages.sh <owner> <repo> [fichiers...]` — active Pages, crée `.nojekyll`, attend le build, vérifie les URLs.
+- `templates/manifest.json`, `templates/sw.js`, `templates/bdd.json` — modèles à copier/adapter (remplacer `APP-NAME`).
+- `references/troubleshooting.md` — erreurs fréquentes et leurs solutions.
 
 ## Pièges rencontrés
 - Messages WhatsApp tronqués → demander la fin en plusieurs messages.
