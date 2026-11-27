@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: A4; margin: 1.5cm 1.6cm; }
+  * { box-sizing: border-box; }
+  body { font-family: "Liberation Sans", Arial, sans-serif; font-size: 13px; line-height: 1.32; color: #111; margin: 0; }
+  h1 { font-size: 19px; margin: 0 0 2px 0; letter-spacing: .5px; }
+  .poste { font-size: 13px; font-weight: bold; color: #0b5394; margin: 0 0 4px 0; }
+  .ref { font-size: 11px; color: #555; margin: 0 0 8px 0; }
+  hr { border: none; border-top: 2px solid #0b5394; margin: 6px 0 10px 0; }
+  table.info { width: 100%; font-size: 12.5px; border-collapse: collapse; margin-bottom: 10px; }
+  table.info td { vertical-align: top; padding: 1px 4px; }
+  table.info td.k { font-weight: bold; width: 30%; color: #0b5394; }
+  h2 { font-size: 14px; color: #0b5394; border-bottom: 1px solid #0b5394; padding-bottom: 2px; margin: 14px 0 6px 0; }
+  .periode { font-weight: bold; }
+  ul { margin: 2px 0 6px 0; padding-left: 18px; }
+  li { margin: 1px 0; }
+  .xp-titre { font-weight: bold; }
+  .mp { background: #f1f6fb; border-left: 3px solid #0b5394; padding: 6px 9px; margin: 4px 0; font-size: 12.5px; }
+  .mp b { color: #0b5394; }
+  .footer { font-size: 11px; color: #555; margin-top: 12px; border-top: 1px solid #ccc; padding-top: 5px; }
+  .page-break { page-break-before: always; }
+
+  /* ===== BLOC EN-TÊTE LETTRE (expéditeur GAUCHE + date DROITE sur 1 ligne) ===== */
+  table.ent { width: 100%; border-collapse: collapse; margin-bottom: 8px; }
+  table.ent td { vertical-align: top; padding: 0 4px; }
+  table.ent td.g { width: 60%; }
+  table.ent td.d { width: 40%; text-align: right; }
+  .dest { font-size: 12.5px; margin-bottom: 12px; }
+  .obj { font-weight: bold; text-decoration: underline; margin-bottom: 10px; }
+  p.cvrx { margin: 0 0 9px 0; text-align: justify; }
+  .sign { margin-top: 18px; }
+</style>
+</head>
+<body>
+
+<!-- =================== CV =================== -->
+<!--
+  Pour un CV : remplir h1 / .poste / .ref / table.info / sections I..VI / .footer.
+  Pour une LETTRE : commenter le bloc CV ci-dessus et décommenter le bloc LETTRE ci-dessous.
+-->
+
+<h1>KAKESA MUDIMBA Dieudonné</h1>
+<p class="poste">/* A REMPLIR : Candidature - <INTITULE DU POSTE> */</p>
+<p class="ref">/* A REMPLIR : Avis de recrutement N° ... | EMPLOYEUR */</p>
+<hr>
+
+<table class="info">
+  <tr><td class="k">Sexe</td><td>Masculin</td><td class="k">Né(e) à</td><td>/* A REMPLIR : lieu + date */</td></tr>
+  <tr><td class="k">État civil</td><td>Célibataire</td><td class="k">Nationalité</td><td>Congolaise</td></tr>
+  <tr><td class="k">Adresse</td><td colspan="3">N° 3, Avenue Tungila, Q/Bianda, C/Mont Ngafula, Kinshasa</td></tr>
+  <tr><td class="k">Téléphone</td><td>(+243) 818 491 601</td><td class="k">E-mail</td><td>kakesamudimba@gmail.com</td></tr>
+</table>
+
+<h2>I. PARCOURS PROFESSIONNEL</h2>
+<p><span class="periode">/* A REMPLIR periode */</span> — <span class="xp-titre">/* A REMPLIR poste */</span>, /* A REMPLIR employeur */<br>
+/* A REMPLIR 1 ligne de faits marquants, puis un <i>→ lien avec le poste vise</i>. */</p>
+
+<h2>II. COMPÉTENCES TRANSFÉRABLES AU POSTE</h2>
+<div class="mp"><b>/* Titre atout */</b> — /* description + → utilite pour le poste */.</div>
+
+<div class="page-break"></div>
+
+<h2>III. ÉTUDES FAITES</h2>
+<ul><li>/* A REMPLIR */</li></ul>
+
+<h2>IV. OUTILS INFORMATIQUES</h2>
+<ul><li>/* A REMPLIR */</li></ul>
+
+<h2>V. LANGUES</h2>
+<ul><li>Français : courant</li><li>Lingala : bilingue</li><li>Anglais : lu, écrit, parlé (moyen)</li></ul>
+
+<h2>VI. PERSONNES DE RÉFÉRENCE</h2>
+<ul><li>/* A REMPLIR nom — rôle — contact */</li></ul>
+
+<p class="footer">Je certifie sur l'honneur que les informations ci-dessus sont vraies et exactes.<br>
+Fait à Kinshasa, le JJ/MM/AAAA — Signature : KAKESA MUDIMBA Dieudonné</p>
+
+<!-- =================== LETTRE (décommenter pour une lettre) ===================
+<div class="coord">
+<b>KAKESA MUDIMBA Dieudonné</b><br>
+N° 3, Avenue Tungila, Q/Bianda, C/Mont Ngafula, Kinshasa<br>
+Tél : (+243) 818 491 601 · E-mail : kakesamudimba@gmail.com
+</div>
+
+<table class="ent">
+  <tr>
+    <td class="g"><!-- expéditeur déjà ci-dessus, laisser vide ou répéter --></td>
+    <td class="d">Kinshasa, le JJ/MM/AAAA</td>
+  </tr>
+</table>
+
+<div class="dest">
+À l'attention de /* A REMPLIR destinataire */<br>
+/* A REMPLIR structure */<br>
+Objet : /* A REMPLIR objet */
+</div>
+
+<p class="cvrx">Monsieur/Madame /* A REMPLIR formule d'appel */,</p>
+
+<p class="cvrx">/* A REMPLIR paragraphe 1 : accroche + poste vise + pont avec l'employeur/experience */</p>
+<p class="cvrx">/* A REMPLIR paragraphe 2 : experience cle reframée pour le poste */</p>
+<p class="cvrx">/* A REMPLIR paragraphe 3 : cloture, disponibilite, pieces jointes */</p>
+
+<p class="cvrx">Veuillez agréer, /* A REMPLIR */, l'expression de mes salutations distinguées.</p>
+
+<div class="sign">
+KAKESA MUDIMBA Dieudonné<br>
+(+243) 818 491 601
+</div>
+-->
+
+</body>
+</html>
