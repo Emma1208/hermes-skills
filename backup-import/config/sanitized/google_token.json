@@ -1,0 +1,21 @@
+{
+  "token": "REDACTED",
+  "refresh_token": "REDACTED",
+  "token_uri": "REDACTED",
+  "client_id": "810249869286-k2led5vuro9kiefl208gd6t3gbgpaujm.apps.googleusercontent.com",
+  "client_secret": "REDACTED",
+  "scopes": [
+    "https://www.googleapis.com/auth/contacts.readonly",
+    "https://www.googleapis.com/auth/drive",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/gmail.send",
+    "https://www.googleapis.com/auth/spreadsheets",
+    "https://www.googleapis.com/auth/calendar",
+    "https://www.googleapis.com/auth/documents"
+  ],
+  "universe_domain": "googleapis.com",
+  "account": "",
+  "expiry": "2026-06-20T19:43:55Z",
+  "type": "authorized_user"
+}
