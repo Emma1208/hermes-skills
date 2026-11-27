@@ -1,0 +1,25 @@
+# Modèle de base de données JSON
+
+À placer à la racine du dépôt sous `bdd.json`. La structure doit rester **identique à l'objet `state` de l'application** — le pont GitHub sérialise directement `window.__gcState()`.
+
+```json
+{
+  "app": "Nom de l'application",
+  "version": 1,
+  "cle_localStorage": "cle_utilisee_par_l_app",
+  "description": "Base de données JSON de l'application.",
+  "eleves": [],
+  "customOptions": {},
+  "notes": {},
+  "maxima": {},
+  "presences": {},
+  "school": {},
+  "ts": 0
+}
+```
+
+## Règles
+- `ts` : timestamp `Date.now()` mis à jour à chaque écriture. Le pont compare `ts` local et distant : **le plus récent gagne**.
+- Ajouter les métadonnées `app`, `version`, `cle_localStorage` pour que le fichier soit autodocumenté.
+- Le champ principal (ici `eleves`) dépend de l'app : l'adapter à son propre `state`.
+- Ne jamais stocker le PAT dans ce fichier : il reste dans le `localStorage` du navigateur.
