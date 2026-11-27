@@ -1,0 +1,189 @@
+{
+  "jobs": [
+    {
+      "id": "a9914379e533",
+      "name": "Auto-Backup Hermes",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": "auto_sync.sh",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 120,
+        "display": "every 120m"
+      },
+      "schedule_display": "every 120m",
+      "repeat": {
+        "times": null,
+        "completed": 66
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-09T15:19:13.972399+00:00",
+      "next_run_at": "2026-07-16T15:38:29.597984+00:00",
+      "last_run_at": "2026-07-16T13:38:29.597984+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "local",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "8131589581",
+        "chat_name": "Emmanuel Kakese",
+        "thread_id": null,
+        "user_id": "8131589581"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "3cbee5c457a9",
+      "name": "Recherche offres KAKESA",
+      "prompt": "Lance le script de recherche d'offres d'emploi pour le profil de KAKESA MUDIMBA Emmanuel-Dieudonne (Comptabilite / Gestion Financiere / Audit / Enseignement, Kinshasa RDC) : cd /root/linkedin_app && python3 job_search_kakesa.py\n\nR\u00e9sume ensuite pour l'utilisateur (en fran\u00e7ais, clair, sans jargon technique) :\n1. Combien d'offres trouv\u00e9es aujourd'hui\n2. Les 5 meilleures offres collant au profil, avec titre + lien\n3. Une phrase de comparaison : est-ce que ces offres correspondent \u00e0 son profil (Licence en Gestion Financiere, exp\u00e9rience prof/compta, audit Ministere des Finances, MSF, trading) ?\n\nLivre le r\u00e9sultat dans le chat Telegram. Sois concis : puces, pas de tableaux.",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": "nous",
+      "model_snapshot": "tencent/hy3:free",
+      "base_url": null,
+      "script": "job_search_kakesa.py",
+      "no_agent": false,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 4
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-12T17:50:55.054925+00:00",
+      "next_run_at": "2026-07-17T09:00:00+00:00",
+      "last_run_at": "2026-07-16T09:02:33.461418+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:8131589581",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "8131589581",
+        "chat_name": "Emmanuel Kakese",
+        "thread_id": null,
+        "user_id": "8131589581"
+      },
+      "enabled_toolsets": null,
+      "workdir": "/root/linkedin_app",
+      "fire_claim": null
+    },
+    {
+      "id": "789f0221224a",
+      "name": "V\u00e9rification accus\u00e9s r\u00e9ception candidatures",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": "verif_accuse_reception.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "interval",
+        "minutes": 120,
+        "display": "every 120m"
+      },
+      "schedule_display": "every 120m",
+      "repeat": {
+        "times": null,
+        "completed": 9
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-15T19:26:37.596788+00:00",
+      "next_run_at": "2026-07-16T15:47:38.104659+00:00",
+      "last_run_at": "2026-07-16T13:47:38.104659+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:8131589581",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "8131589581",
+        "chat_name": "Emmanuel Kakese",
+        "thread_id": null,
+        "user_id": "8131589581"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    },
+    {
+      "id": "fad9c793f9e2",
+      "name": "G\u00e9n\u00e9ration brouillons relance candidatures (+7j)",
+      "prompt": "",
+      "skills": [],
+      "skill": null,
+      "model": null,
+      "provider": null,
+      "provider_snapshot": null,
+      "model_snapshot": null,
+      "base_url": null,
+      "script": "relance_candidatures.py",
+      "no_agent": true,
+      "context_from": null,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "display": "0 9 * * *"
+      },
+      "schedule_display": "0 9 * * *",
+      "repeat": {
+        "times": null,
+        "completed": 1
+      },
+      "enabled": true,
+      "state": "scheduled",
+      "paused_at": null,
+      "paused_reason": null,
+      "created_at": "2026-07-15T19:46:15.999634+00:00",
+      "next_run_at": "2026-07-17T09:00:00+00:00",
+      "last_run_at": "2026-07-16T09:01:07.103350+00:00",
+      "last_status": "ok",
+      "last_error": null,
+      "last_delivery_error": null,
+      "deliver": "telegram:8131589581",
+      "origin": {
+        "platform": "telegram",
+        "chat_id": "8131589581",
+        "chat_name": "Emmanuel Kakese",
+        "thread_id": null,
+        "user_id": "8131589581"
+      },
+      "enabled_toolsets": null,
+      "workdir": null,
+      "fire_claim": null
+    }
+  ],
+  "updated_at": "2026-07-16T13:47:38.108609+00:00"
+}
