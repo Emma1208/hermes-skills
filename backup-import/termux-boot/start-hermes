@@ -1,0 +1,22 @@
+#!/data/data/com.termux/files/usr/bin/sh
+# Hermes Gateway autostart for Termux:Boot
+termux-wake-lock
+
+export HOME=/data/data/com.termux/files/home
+export PATH="$PREFIX/bin:$HOME/.local/bin:$PATH"
+
+PROJECT="$HOME/hermes-env"
+LOGFILE="$HOME/.hermes/var/hermes-gateway.log"
+PIDFILE="$HOME/.hermes/var/.hermes-gateway.pid"
+
+mkdir -p "$HOME/.hermes/var" 2>/dev/null || true
+
+# Avoid duplicates
+if [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; then
+  exit 0
+fi
+
+cd "$PROJECT" || exit 1
+
+"$PROJECT/bin/hermes" gateway run --force --accept-hooks > "$LOGFILE" 2>&1 &
+echo $! > "$PIDFILE"
