@@ -19,6 +19,8 @@ Procédure éprouvée pour transformer un fichier HTML isolé en application ins
   1. le déployer sur GitHub ;
   2. que les données soient partagées entre navigateurs/appareils via un `bdd.json` ;
   3. l'installer sur Android en PWA.
+- L'utilisateur envoie le HTML/CSS d'**un onglet remplacé** d'une app déjà déployée et veut garder le calcul et les champs existants → voir `references/tab-design-transplant.md`.
+- L'utilisateur demande une **copie opérationnelle** d'un dépôt pour y travailler exclusivement → section « Dépôt opérationnel » ci-dessous.
 
 ## Étapes
 
@@ -52,6 +54,7 @@ Toujours passer par un **script fichier** (`write_file` puis `bash`) pour ne jam
   3. `schedulePush()` ne doit **pas** faire `clearTimeout` à chaque frappe : garder le premier timer (`if (timer) return`) sinon rien n'est jamais envoyé.
   4. En cas d'échec réseau, garder les données locales et l'indiquer dans le message de statut.
 - `api.github.com` renvoie `Access-Control-Allow-Origin: *` → fonctionne depuis `file://` et depuis Pages. Ne jamais mettre le PAT en dur dans le HTML.
+- **Quand l'utilisateur ne veut plus saisir son PAT** : passer par un proxy Cloudflare Worker qui détient le secret `GH_TOKEN` et les apps n'envoient qu'une `X-App-Key`. Voir `references/pat-proxy-worker.md` (code court obligatoire sur éditeur mobile, deux styles de pont, ordre de vérification GET/PUT avant déploiement).
 
 ### 4. PWA (installation mobile)
 - `manifest.json` : `name`, `short_name`, `start_url:"./index.html"`, `display:"standalone"`, `theme_color`, icônes 192/512/maskable.
@@ -88,11 +91,19 @@ Quand l'utilisateur renvoie une version modifiée d'une app déjà en ligne :
 - `references/troubleshooting.md` — erreurs fréquentes et leurs solutions.
 - `references/repo-consolidation.md` — fusionner un dépôt backup dans le dépôt « cerveau » (audit croisé, transfert idempotent par lots, vérification, suppression sécurisée).
 - `references/pwa-upgrade-existing-app.md` — migrer une app déjà déployée vers `bdd.json` et une PWA complète sans perdre les données (casse, fusion de BDD parasite, vérification).
+- `references/operational-repo.md` — dépôt « opérationnel » : copier un dépôt par `download_url` (piège `KeyError: 'content'`), round-trip ZIP avec nom exact, ne modifier que le dépôt courant.
+- `references/backup-convention.md` — message « S » = backup auto skills+mémoire vers hermes-skills ; recréer `backup_skills_memory.py` s'il manque après migration.
+- `references/tab-design-transplant.md` — remplacer l'UI d'un onglet par un design fourni sans casser les données : étendre `FIELDS` au lieu de renommer les clés, préserver `compute()`, piège des patchs appliqués sur des copies périmées, impression A3 isolée.
+- `references/pat-proxy-worker.md` — cacher le PAT derrière un Cloudflare Worker : code court pour mobile, secrets `GH_TOKEN`/`APP_KEY`, deux styles de pont, vérification GET/PUT avant de brancher les apps.
+
+## Dépôt opérationnel (décision utilisateur)
+Quand l'utilisateur désigne un dépôt opérationnel, **ne travailler que là**. Cas réel : `gestion-de-classe-operationnel` remplace `gestion-de-classe`. Si un fichier à modifier doit être renvoyé par l'utilisateur, livrer un **ZIP contenant `index.html`** (nom exact du dépôt). Si un document n'arrive pas (« could not be downloaded »), demander le contenu — ne jamais inventer ce que « ceci » devait être.
 
 ## Pièges rencontrés
 - **Casse des noms de fichiers** : GitHub est sensible à la casse. Une app envoyée pointait vers `BDD.json` alors que le dépôt contenait `bdd.json` → l'app aurait créé un second fichier et perdu la synchro. Harmoniser TOUJOURS les références (`grep -o 'BDD.json'`) vers le nom réel du fichier avant déploiement. Si un fichier parasite existe déjà et contient de vraies données, les **fusionner** dans le fichier canonique avant de corriger les références, et garder le parasite comme copie de sécurité.
 - **Patch de `push()` : surveiller le `try {`** — un remplacement de bloc peut avaler le `try` d'origine ; `node --check` donne alors `SyntaxError: Unexpected token 'catch'`. Voir `references/sync-data-loss.md`.
 - **Point d'ancrage pour patcher le HTML** : ne jamais chercher un élément généré par JS (ex. `<nav id="nav"></nav>` rempli par `$("#nav").innerHTML=...`). Cibler du HTML statique (`<main class="wrap">`, `</body>`). Un script Python qui échoue avant `write()` laisse le fichier intact — corriger l'ancrage et relancer.
+- **API `/contents`** : ne contient pas le `content` des fichiers, seulement les métadonnées. Pour copier un dépôt, passer par `download_url` — voir `references/operational-repo.md`.
 - Messages WhatsApp tronqués → demander la fin en plusieurs messages.
 - `grep -qw "ma-compta-syscohada"` correspond aussi à `compta-syscohada` (sous-chaîne) → comparer les noms exacts avec `echo " $KEEP " | grep -q " $REPO "`.
 - Token exposé dans une commande → blocage du scan ; passer par un fichier script.
@@ -101,6 +112,10 @@ Quand l'utilisateur renvoie une version modifiée d'une app déjà en ligne :
 
 ## Préférences utilisateur ( vérifiées en session )
 - Répondre en français, de façon concise et actionnable, sans long récit de processus.
+- **Livrer l'artefact, pas la recette.** Quand il demande un code « à coller », un fichier « importable » ou un aperçu, donner le contenu COMPLET directement dans le message ou en pièce jointe — pas des instructions du type « cherche telle ligne et remplace ». S'il doit quand même appliquer un patch lui-même, fournir tous les blocs prêts à l'emploi dans l'ordre, et un seul fichier complet quand c'est possible.
+- **Ne pas s'auto-congratuler d'un travail non demandé** : il a dit « Tu n'as rien fait » après une réponse qui n'avait pas répondu à sa vraie demande. Vérifier que l'action correspond exactement à la demande avant de rapporter un résultat.
+- Sur un long code collé dans un éditeur mobile (Cloudflare, etc.), fournir une version **courte et compacte** — une version de ~100 lignes a été tronquée et a généré un SyntaxError ; ~27 lignes ont fonctionné.
+- Quand il donne un secret/identifiant (PAT, APP_KEY, URL), l'utiliser **exactement**, sans le tronquer avec « ... » ni le remplacer par un placeholder dans le code livré.
 - Si l'utilisateur dit « stop / donne moi juste ces informations » : arrêter immédiatement les outils et ne donner que les valeurs concrètes.
 - L'utilisateur accorde des approbations globales (« toujours approuvé ») : ne pas redemander à chaque fois ; regrouper le travail dans des scripts et rapporter à la fin. Respecter toute interruption explicite.
 
